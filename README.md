@@ -6,7 +6,7 @@ To run this applicaton you need to open the terminal in your text redactor VS, V
 3. npm start
 After following steps are completed the aplication will run at http://localhost:3000/recipe
 Link to public repository on GitHub: https://github.com/00021990/WebTechCW2_21990
-Link for hosted site: https://classic-playful-homegrown.glitch.me
+Link for hosted site: https://classic-playful-homegrown.glitch.me/recipe
 The source for the code was taken from seminar 6 semester 2
 
 
