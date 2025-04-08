@@ -2,15 +2,15 @@ extends ../head.pug
 
 block content
   .container.mt-4
-    h1.mb-4 recipe List
-    a.btn.btn-primary.mb-3(href="/recipe/create") Create New recipe
+    h1.mb-4 Recipe List
+    a.btn.btn-primary.mb-3(href="/recipe/create") Create New Recipe
     table.table.table-striped
       thead
         tr
           th ID
           th Name
           th Address
-          th RecipieAuthor
+          th Recipe Author Number
           th Actions
       tbody
         each recipe in recipes
@@ -22,4 +22,6 @@ block content
             td
               a.btn.btn-warning.btn-sm.mr-2(href=`/recipe/update/${recipe.id}`) Update
               span &nbsp;
-              a.btn.btn-danger.btn-sm(href=`/api/recipe/delete/${recipe.id}`) Delete
+
+    p.mt-4.text-muted
+      | This web application was created to fulfill Web Technology module's requirements and does not represent an actual company or service.
