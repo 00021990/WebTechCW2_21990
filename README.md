@@ -1,5 +1,5 @@
 This web aplication was made to fullfil task that was given as my CW for Web Tech module
-The app allows you to create, update, delete and view the recipes and their authors
+The app allows you to create, update, delete and view the recipes their descriptions and authors
 To run this applicaton you need to open the terminal in your text redactor VS, VScode or whatever and then write the following
 1. npm init -y
 2. npm i express express-validator body-parser nodemon pug
