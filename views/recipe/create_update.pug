@@ -1,0 +1,33 @@
+extends ../head.pug
+
+block content
+  .container.mt-4
+    - var formAction = recipe && recipe.id ? `/api/recipe/update/${recipe.id}` : '/api/recipe/create'
+    - var formTitle = recipe && recipe.id ? 'Update recipe' : 'Create recipe'
+    // Determine field values
+    - var sName = recipe ? (recipe.recipe ? recipe.recipe.name : recipe.name) : ''
+    - var sdescription = recipe ? (recipe.recipe ? recipe.recipe.description : recipe.description) : ''
+    - var sRecipieAuthor = recipe ? (recipe.recipe ? recipe.recipe.recipieauthor : recipe.recipieauthor) : ''
+    h1.mb-4= formTitle
+
+    // Display validation errors, if any
+    if errors && errors.length
+      .alert.alert-danger
+        ul
+          each err in errors
+            li #{err.msg}
+
+    form(method="post", action=formAction)
+      if recipe && recipe.id
+        input(type="hidden", name="id", value=recipe.id)
+      .form-group
+        label(for="name") Name
+        input.form-control(type="text", name="name", id="name", value=sName, placeholder="Enter name")
+      .form-group
+        label(for="description") Description
+        input.form-control(type="text", name="description", id="description", value=sdescription, placeholder="Enter description")
+      .form-group
+        label(for="recipieauthor") RecipieAuthor
+        input.form-control(type="text", name="recipieauthor", id="recipieauthor", value=sRecipieAuthor, placeholder="Enter recipieauthor number")
+      button.btn.btn-primary(type="submit") Submit
+

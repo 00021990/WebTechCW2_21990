@@ -1,0 +1,25 @@
+extends ../head.pug
+
+block content
+  .container.mt-4
+    h1.mb-4 recipe List
+    a.btn.btn-primary.mb-3(href="/recipe/create") Create New recipe
+    table.table.table-striped
+      thead
+        tr
+          th ID
+          th Name
+          th Address
+          th RecipieAuthor
+          th Actions
+      tbody
+        each recipe in recipes
+          tr
+            td= recipe.id
+            td= recipe.recipe.name
+            td= recipe.recipe.description
+            td= recipe.recipe.recipieauthor
+            td
+              a.btn.btn-warning.btn-sm.mr-2(href=`/recipe/update/${recipe.id}`) Update
+              span &nbsp;
+              a.btn.btn-danger.btn-sm(href=`/api/recipe/delete/${recipe.id}`) Delete
